@@ -7,7 +7,12 @@ ingredient_3 = 'flour'
 ingredient_4 = 'sugar'
 
 
-def print_ingredients():  # Ways to work with strings/printing
+def print_ingredients(): 
+    print(ingredient_1, ingredient_2, ingredient_3, ingredient_4)
+    print(ingredient_1 +" "+ ingredient_2 +" "+ ingredient_3 +" "+ ingredient_4) 
+    print(f'milk eggs flour sugar')
+ 
+    # Ways to work with strings/printing
     # Those are the right ingredients, aren't they? Let's print them out a few different ways to check
 
     # 1.1 Using one print statement, print out the ingredients as 4 separate strings
@@ -17,10 +22,19 @@ def print_ingredients():  # Ways to work with strings/printing
 
     # 1.3 Using one print statement, use an f-string to print the ingredients
     # as a single string (make sure to add a space between each ingredient!)
+#print_ingredients()
 
 
 def confirm_ingredients():  # String methods
     global ingredient_1, ingredient_2, ingredient_3, ingredient_4
+    ingredients = f'milk eggs flour sugar'
+    print(ingredients.replace('milk', 'butter'))
+    print(ingredients.count('milk'))
+    print(ingredients)
+    ingredients = ingredients.replace('milk', 'butter')
+    print(ingredients)
+    print(ingredients.upper())
+
     # 2.1 Save the f-string you wrote above into a variable called `ingredients`.
     
     # Aha, that's the issue! We need to use butter, not milk.
@@ -39,11 +53,16 @@ def confirm_ingredients():  # String methods
 
     # 2.7 That looks better. Let's make it official: use another string method to 
     # print the string in the `ingredients` variable in all-caps now that it's right.
-    
-#confirm_ingredients()
+# confirm_ingredients()
 
 
-def favorite_bake():  # User Input/Type conversion
+def favorite_bake():  
+    baked_good = input("What is your favorite baked good? ")
+    frequency = input(f"Roughly how many times a month do you eat {baked_good}? ")
+    print(type(frequency))
+    frequency = int(frequency)
+        
+    # User Input/Type conversion
     # The beauty of these ingredients is that you can make tons with them. 
     # Let's get some user input to decide what to bake!
 
@@ -55,14 +74,13 @@ def favorite_bake():  # User Input/Type conversion
 
     # When the user inputs a number, what data type is it saved as?
     # 3.3 Print out the _type_ of the `frequency` variable to check.
-
+    
     # 3.4 Uncomment the print statements below, and get them to run WITHOUT changing the content--
     # HINTS: 
     # What's missing from the first print statement to allow us to use a variable inside a string?
     # Use `type conversion` to fix the second one
     
-    # print('Ooooh, {baked_good}s are delicious!')
-    # print(f'We recommend you eat {baked_good}s at least {frequency * 2} times a month!')
+    print(f'Ooooh, {baked_good}s are delicious!')
+    print(f'We recommend you eat {baked_good}s at least {frequency * 2} times a month!')
     
-#favorite_bake()
-
+# favorite_bake()
